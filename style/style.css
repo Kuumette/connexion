@@ -1,0 +1,44 @@
+body {
+	background-image: url("../ressources/fond.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	font-family: "Indie Flower", cursive;
+}
+
+.formulaire {
+	background-color: hsla(337, 76%, 64%, 0.5);
+	border: 1px solid hsla(337, 80%, 61%, 0.5);
+	box-shadow: 10px 10px 10px 5px rgba(0, 0, 0, 0.4);
+	margin-left: 37.5%;
+	border-radius: 15px;
+	text-align: center;
+	width: 25%;
+}
+
+h1 {
+	text-align: center;
+	color: rgb(0, 0, 0);
+	text-shadow: 0 0 2px #fefcc9, 1px -1px 3px #feec85, -2px -2px 4px #ffae34,
+		2px -4px 5px #ec760c, -2px -6px 6px #cd4606, 0 -8px 7px #973716,
+		1px -9px 8px #451b0e;
+	font-size: 3em;
+}
+.attribution {
+	text-align: center;
+}
+
+input {
+	border-radius: 20px;
+	padding: 1.5%;
+	background-color: hsla(337, 55%, 88%, 0.349);
+	font-family: "Indie Flower", cursive;
+}
+
+button {
+	border-radius: 25px;
+	padding: 2%;
+	margin-top: 4%;
+	background-color: hsla(337, 55%, 88%, 0.349);
+	font-family: "Indie Flower", cursive;
+	font-size: 1.2em;
+}
