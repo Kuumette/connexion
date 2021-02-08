@@ -75,12 +75,39 @@ if(isset($_POST['firstname']) && $_POST['lastname'] && isset($_POST['gsm']) && $
   var_dump($verif);
 }
 
-if($verif) {
+function verif_pseudo ($pseudo) {
   try { 
     $bdd = new PDO ("mysql:host=localhost;port=3306;dbname=users","root",""); 
+  
+   $requete = "SELECT * FROM connexion";
+  
+    $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $bdd->exec("SET NAMES 'utf8'");
+  
+    $sql = $bdd -> query($requete);
+  }
+  catch(Exception $e) {
+    die("erreur:".$e -> getMessage());
+  } 
+  while ($row = $sql -> fetch()) {
+    echo $row['pseudo'];
+    if ($row['pseudo'] === $pseudo ) {
+      $verif = false;
+    }
+    var_dump($verif);
 
-   $requete = "INSERT INTO connexion (nom, prenom, telephone, email, pseudo, mdp) VALUES (:lname, :fname, :gsm, :courriel, :cPseudo, :mdp)";
-    
+  }
+}
+
+verif_pseudo($_POST['pseudo']);
+if($verif) {
+
+try { 
+  $bdd = new PDO ("mysql:host=localhost;port=3306;dbname=users","root",""); 
+  
+
+  $requete = "INSERT INTO connexion (nom, prenom, telephone, email, pseudo, mdp) VALUES (:lname, :fname, :gsm, :courriel, :cPseudo, :mdp)";
+   
 
     $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $bdd->exec("SET NAMES 'utf8'");
@@ -89,7 +116,7 @@ if($verif) {
     $sql->execute(array(':lname'=>$lname, ':fname'=>$fname, ':gsm'=>$gsm, ':courriel'=>$courriel, ':cPseudo'=>$cPseudo, ':mdp'=>$mdp));
 
     header("Location: index.php");
-  }
+}
   catch(Exception $e) {
     die("erreur:".$e -> getMessage());
   } 
@@ -97,8 +124,7 @@ if($verif) {
   
   //echo $bdd;
 } else { echo "Au moins une qui manque !!!";
-  header("Location: index1.php");}
-var_dump($verif);
-
+  header("Location: inscription.php");
+}
 
 ?>

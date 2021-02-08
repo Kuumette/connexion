@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -11,9 +13,9 @@
     <title>Connection</title>
 </head>
 <body>
-    <h1>Premiere connection</h1>
+    <h1>Modif</h1>
     <div class="formulaire">
-        <form action="traitement1.php" method="post" id="form-1">
+        <form action="modif-traitement.php" method="post" id="form-1">
                 <label>Prénom</label><br>
                 <input type="text" placeholder="Prénom" name="firstname" required><br><br>
         

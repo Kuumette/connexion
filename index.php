@@ -1,3 +1,7 @@
+<?php
+session_start();
+session_destroy();
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -31,7 +35,7 @@
          by <a href="https://github.com/Kuumette">Kuumette</a>.
     </div>
     <div>
-        <a href = "index1.php">
+        <a href = "inscription.php">
             <button>
                 Inscription
             </button>
